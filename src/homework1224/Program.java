@@ -3,22 +3,6 @@ package homework1224;
 public class Program {
 
 	public static void main(String[] args) throws Exception {
-		// StackWithMax myMax = new StackWithMax();
-		//
-		// myMax.insert(1);
-		// System.out.println(myMax.max());
-		// myMax.insert(4);
-		// myMax.insert(3);
-		// System.out.println(myMax.max());
-		// myMax.insert(5);
-		// myMax.insert(5);
-		// System.out.println(myMax.max());
-		// myMax.remove();
-		// System.out.println(myMax.max());
-		// myMax.remove();
-		// myMax.insert(2);
-		// System.out.println(myMax.max());
-
 		// ArrayQueue myQueue = new ArrayQueue(4);
 		// try {
 		// System.out.println(myQueue.peek());

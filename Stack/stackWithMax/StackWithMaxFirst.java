@@ -38,4 +38,22 @@ public class StackWithMaxFirst {
 			return myStack.pop();
 		}
 	}
+	
+	public static void main(String[] args) throws Exception {
+		StackWithMaxFirst myMax = new StackWithMaxFirst();
+
+		myMax.insert(1);
+		System.out.println(myMax.max());
+		myMax.insert(4);
+		myMax.insert(3);
+		System.out.println(myMax.max());
+		myMax.insert(5);
+		myMax.insert(5);
+		System.out.println(myMax.max());
+		myMax.remove();
+		System.out.println(myMax.max());
+		myMax.remove();
+		myMax.insert(2);
+		System.out.println(myMax.max());
+	}
 }

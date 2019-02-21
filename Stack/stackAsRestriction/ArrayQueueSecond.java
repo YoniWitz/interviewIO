@@ -1,12 +1,12 @@
 package stackAsRestriction;
 
-public class ArrayQueue {
+public class ArrayQueueSecond {
 	private int size;
 	private int p1;
 	private int p2;
 	private int[] queue;
 
-	public ArrayQueue(int size) {
+	public ArrayQueueSecond(int size) {
 		this.size = size;
 		this.p1 = -1;
 		this.p2 = size;
@@ -37,7 +37,7 @@ public class ArrayQueue {
 	}
 
 	public static void main(String[] args) {
-		ArrayQueue myQueue = new ArrayQueue(7);
+		ArrayQueueSecond myQueue = new ArrayQueueSecond(7);
 		myQueue.push(1);
 		myQueue.push(2);
 		myQueue.push(3);
