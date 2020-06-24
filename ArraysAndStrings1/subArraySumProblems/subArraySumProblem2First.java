@@ -2,7 +2,7 @@ package subArraySumProblems;
 
 import java.util.Arrays;
 
-public class subArraySumProblemTwoFirst {
+public class subArraySumProblem2First {
 	static int[] findContSubArray(int[] a, int x) {
 		if (a == null || a.length == 0) {
 			return null;

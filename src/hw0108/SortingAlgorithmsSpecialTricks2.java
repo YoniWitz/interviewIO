@@ -8,7 +8,8 @@ public class SortingAlgorithmsSpecialTricks2 {
 		if (a == null)
 			return null;
 
-		List<Integer>[] order = new List[10];
+		@SuppressWarnings("unchecked")
+		List<Integer>[] order = new ArrayList[10];
 		for (int el : a) {
 			if (order[el] == null) {
 				order[el] = new ArrayList<>();
