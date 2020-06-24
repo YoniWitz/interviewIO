@@ -1,6 +1,6 @@
 package reverseTraversal;
 
-public class OneSecond {
+public class TraversingArrayInReverse1Second {
 	static void dupEven(int[] a) {
 		if (a == null || a.length < 1) {
 			return;
