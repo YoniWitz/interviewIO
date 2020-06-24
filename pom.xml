@@ -4,6 +4,7 @@
   <artifactId>InterviewIO</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>interview</name>
+
   <build>
     <sourceDirectory>src</sourceDirectory>
     <testSourceDirectory>tests</testSourceDirectory>
