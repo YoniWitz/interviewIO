@@ -1,6 +1,6 @@
 package reverseTraversal;
 
-public class TraversingArrayInreverse1First {
+public class TraversingArrayInReverse1First {
 	static void doubleEvens(int[] a) {
 		int arrayEnd = a.length - 1;
 		if (a == null || arrayEnd < 1) {

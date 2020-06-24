@@ -1,6 +1,6 @@
 package reverseTraversal;
 
-public class ReverseTraversal2Second {
+public class TraversingArrayInReverse2Second {
 	static void reverseString(String s) {
 		if (s == null) {
 		} else {
