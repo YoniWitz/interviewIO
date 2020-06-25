@@ -1,10 +1,10 @@
-package subArraySumProblems;
+package prefixSums;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class subArraySumProblems4Second {
+public class PrefixSums2Second {
 	static int[] findSumX(int[] a, int X) {
 		if (a == null || a.length == 0)
 			return null;

@@ -1,10 +1,10 @@
-package subArraySumProblems;
+package prefixSums;
 
 import java.util.HashMap;
 import java.util.Map;
 import javafx.util.Pair;
 
-public class SubarraySumProblem3First {
+public class PrefixSums1First {
 	private static Pair<Integer, Integer> contiguousSubArrayZero(int[] array) {
 		if (array == null || array.length == 0) {
 			return null;
