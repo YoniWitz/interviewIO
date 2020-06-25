@@ -1,8 +1,8 @@
-package subArraySumProblems;
+package prefixSums;
 
 import java.util.HashMap;
 
-public class SubarraySumProblem4First {
+public class PrefixSums2First {
 	static int[] subArraySumK(int[] array, int K) {
 		if (array == null) {
 		} else {

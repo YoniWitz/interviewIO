@@ -1,6 +1,6 @@
 package kadanesAlgorithm;
 
-public class KadanesAlgorighm1First {
+public class KadanesAlgorithm1First {
 	public static void main(String[] args) {
 		int[] a = { -2, -3, 4, -1, -2, 1, 5, -1 };
 
