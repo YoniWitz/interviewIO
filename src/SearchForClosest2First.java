@@ -1,4 +1,4 @@
-package searchForClosest;
+
 
 public class SearchForClosest2First {
 	static int findClosest(int[] array, int num) {

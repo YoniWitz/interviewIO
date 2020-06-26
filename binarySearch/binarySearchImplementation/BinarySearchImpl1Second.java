@@ -1,7 +1,7 @@
 package binarySearchImplementation;
 
 public class BinarySearchImpl1Second {
-	static boolean binarysearchImpl(int[] a, int x) {
+	static boolean binarySearchImpl(int[] a, int x) {
 		if (a == null)
 			return false;
 
@@ -24,6 +24,6 @@ public class BinarySearchImpl1Second {
 
 	public static void main(String[] args) {
 		int[] a = { 2, 4, 6, 8 };
-		System.out.println(binarysearchImpl(a, 8));
+		System.out.println(binarySearchImpl(a, 8));
 	}
 }
