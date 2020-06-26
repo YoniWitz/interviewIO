@@ -1,7 +1,7 @@
 package specialTricks;
 
 public class SpecialTricks3First {
-	static int squareRoot(int x) {
+	static int findSquareRoot(int x) {
 		int start = 0;
 		int end = x;
 		int mid;
@@ -29,6 +29,6 @@ public class SpecialTricks3First {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(squareRoot(3));
+		System.out.println(findSquareRoot(3));
 	}
 }

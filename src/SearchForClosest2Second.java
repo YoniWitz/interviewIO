@@ -1,4 +1,4 @@
-package searchForClosest;
+
 
 public class SearchForClosest2Second {
 	static int binarySearch(int[] A, int x) {
