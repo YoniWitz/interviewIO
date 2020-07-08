@@ -1,6 +1,6 @@
 package permutationsUsingAuxiliaryBuffer;
 
-public class OneFirst {
+public class PrintArrayCombinationsFirst {
 	static void printComb(int[] a, int x) {
 		if (a == null || x > a.length || a.length == 0) {
 			return;
@@ -16,8 +16,9 @@ public class OneFirst {
 			printBuffer(auxBuffer);
 			return;
 		}
-		if (aIndex == a.length)
+		if (aIndex == a.length) {
 			return;
+		}
 
 		for (int i = aIndex; i < a.length; i++) {
 			auxBuffer[bufferIndex] = a[i];
@@ -34,8 +35,8 @@ public class OneFirst {
 	}
 
 	public static void main(String[] args) {
-		int[] a = { 1, 2, 3, 4 };
-		printComb(a, 3);
+		int[] a = {1,2,3,4,5,6,7};
+		int length = 3;
+		printComb(a, length);
 	}
-
 }

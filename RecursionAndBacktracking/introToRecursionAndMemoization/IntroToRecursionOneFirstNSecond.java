@@ -3,12 +3,12 @@ package introToRecursionAndMemoization;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IntroToRecursionOneFirst {
-	static Map<Integer, Integer> fiboMap = new HashMap<Integer, Integer>();;
+public class IntroToRecursionOneFirstNSecond {
+	static Map<Integer, Integer> fiboMap = new HashMap<Integer, Integer>();
 	static int result;
 
 	static int nthFibo(int n) {
-		System.out.print("f" + n + " ");
+		//System.out.print("f" + n + " ");
 		if (n == 1 || n == 2) {
 			return 1;
 		} else {
@@ -18,7 +18,6 @@ public class IntroToRecursionOneFirst {
 	}
 
 	static int nthFiboMem(int n) {
-		System.out.print("f" + n + " ");
 		if (n == 1 || n == 2) {
 			return 1;
 		}
