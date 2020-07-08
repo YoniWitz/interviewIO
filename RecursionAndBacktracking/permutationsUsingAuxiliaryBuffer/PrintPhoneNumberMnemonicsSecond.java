@@ -1,9 +1,10 @@
 package permutationsUsingAuxiliaryBuffer;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TwoFirst {
+public class PrintPhoneNumberMnemonicsSecond {
 	static Map<Integer, Character[]> telephoneLetterMap;
 
 	private static Map<Integer, Character[]> createMap() {
@@ -21,41 +22,37 @@ public class TwoFirst {
 		return null;
 	}
 
-	static void printMnemonics(int[] a) {
-		if (a == null || a.length == 0) {
-			return;
-		}
+	public static void main(String[] args) {
+		int[] a = { 2, 1, 3, 4 };
 		createMap();
-		char[] auxBuffer = new char[a.length];
-		printMnemonicsHelper(a, auxBuffer, 0, 0);
+		printPhoneNumberMnemonics(a);
 	}
 
-	static void printMnemonicsHelper(int[] a, char[] auxBuffer, int aIndex, int bufferIndex) {
+	private static void printPhoneNumberMnemonics(int[] a) {
+		if (a == null || a.length == 0)
+			return;
+
+		Character[] auxLetters = new Character[a.length];
+		int aIndex = 0;
+		int lettersIndex = 0;
+
+		printPhoneNumberMnemonicsHelper(a, auxLetters, aIndex, lettersIndex);
+	}
+
+	private static void printPhoneNumberMnemonicsHelper(int[] a, Character[] auxLetters, int aIndex, int lettersIndex) {
 		if (aIndex == a.length) {
-			printArray(auxBuffer);
+			System.out.println(Arrays.toString(Arrays.copyOfRange(auxLetters, 0, lettersIndex)));
 			return;
 		}
 
 		Character[] letters = telephoneLetterMap.get(a[aIndex]);
 
 		if (letters.length == 0)
-			printMnemonicsHelper(a, auxBuffer, aIndex + 1, bufferIndex);
+			printPhoneNumberMnemonicsHelper(a, auxLetters, aIndex + 1, lettersIndex);
 
-		for (Character ch : letters) {
-			auxBuffer[bufferIndex] = ch;
-			printMnemonicsHelper(a, auxBuffer, aIndex + 1, bufferIndex + 1);
+		for (Character letter : letters) {
+			auxLetters[lettersIndex] = letter;
+			printPhoneNumberMnemonicsHelper(a, auxLetters, aIndex + 1, lettersIndex + 1);
 		}
 	}
-
-	private static void printArray(char[] auxBuffer) {
-		for (char ch : auxBuffer)
-			System.out.print(ch);
-		System.out.println();
-	}
-
-	public static void main(String[] args) {
-		int[] a = { 2, 3, 4 };
-		printMnemonics(a);
-	}
-
 }

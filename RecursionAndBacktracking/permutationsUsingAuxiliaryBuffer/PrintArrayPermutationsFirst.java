@@ -1,6 +1,6 @@
 package permutationsUsingAuxiliaryBuffer;
 
-public class PrintArrayPermutations {
+public class PrintArrayPermutationsFirst {
 	static void printPerm(int[] a, int x) {
 		if (a == null || x > a.length || a.length == 0) {
 			return;
