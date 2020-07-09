@@ -1,13 +1,15 @@
-package implAndAppend;
+package impl;
 
-public class LinkedList1 {
+public class Impl1First {
 	private Node1 head;
 	private Node1 tail;
 
-	public LinkedList1(Node1 head, Node1 tail) {
-		super();
+	public Impl1First(Node1 head, Node1 tail) {
 		this.head = head;
 		this.tail = tail;
+	}
+
+	public Impl1First() {
 	}
 
 	public Node1 getHead() {
@@ -26,29 +28,6 @@ public class LinkedList1 {
 		this.tail = tail;
 	}
 
-	public void deleteNode(Node1 node, Node1 prev) {
-		if (node == null) {
-			return;
-		}
-		if (prev == null) {
-			head = head.getNext();
-		} else {
-			prev.setNext(node.getNext());
-		}
-	}
-
-	public void deleteNode(Node1 node) {
-		if (node == null) {
-			return;
-		}
-
-		Node1 nextNode = node.getNext();
-		if (nextNode != null) {
-			node.setNumber(nextNode.getNumber());
-			node.setNext(nextNode.getNext());
-		}
-	}
-
 	public Node1 get(int n) {
 		Node1 node = head;
 		for (int i = 0; i < n - 1; i++) {
@@ -59,15 +38,6 @@ public class LinkedList1 {
 			}
 		}
 		return node;
-	}
-
-	public void append(Node1 n) {
-		if (head == null) {
-			head = n;
-		} else {
-			tail.setNext(n);
-		}
-		tail = n;
 	}
 
 	public void printList() {
@@ -84,16 +54,8 @@ public class LinkedList1 {
 		Node1 tail = new Node1(null, 2);
 		head.setNext(tail);
 
-		LinkedList1 linkedList = new LinkedList1(head, tail);// 1,2
-
-		Node1 newNode = new Node1(null, 3);// 1,2,3
-		linkedList.append(newNode);
-		linkedList.printList();
-
-		linkedList.deleteNode(newNode, tail);// 1,2
-		linkedList.printList();
-
-		linkedList.deleteNode(head);// 2
+		Impl1First linkedList = new Impl1First(head, tail);// 1,2
+	
 		linkedList.printList();
 	}
 }

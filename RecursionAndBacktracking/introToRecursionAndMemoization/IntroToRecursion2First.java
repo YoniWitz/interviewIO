@@ -1,6 +1,6 @@
 package introToRecursionAndMemoization;
 
-public class IntroToRecursionTwoFirst {
+public class IntroToRecursion2First {
 	static double CalcPower(int x, int n) {
 		if (n == 0) {
 			return 1;

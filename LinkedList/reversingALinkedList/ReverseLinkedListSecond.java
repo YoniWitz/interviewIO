@@ -1,10 +1,10 @@
 package reversingALinkedList;
 
-import implAndAppend.LinkedList2;
-import implAndAppend.Node2;
+import impl.Impl1Second;
+import impl.Node2;
 
 public class ReverseLinkedListSecond {
-	static void reverseLL(LinkedList2 ll) {
+	static void reverseLL(Impl1Second ll) {
 		if (ll.head == null || ll.head.next == null) {
 			return;
 		}
@@ -23,7 +23,7 @@ public class ReverseLinkedListSecond {
 		ll.head = prev;
 	}
 
-	static boolean palindrom(LinkedList2 ll) {
+	static boolean palindrom(Impl1Second ll) {
 		if (ll.head == null) {
 			return false;
 		}
@@ -56,7 +56,7 @@ public class ReverseLinkedListSecond {
 		Node2 node6 = new Node2(1);
 		Node2 node7 = new Node2(0);
 
-		LinkedList2 linkedlist = new LinkedList2();
+		Impl1Second linkedlist = new Impl1Second();
 		linkedlist.append(node1);
 		linkedlist.append(node2);
 		System.out.println("before reverse: ");

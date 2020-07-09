@@ -1,9 +1,12 @@
-package implAndAppend;
+package impl;
 
 public class Node1 {
 	// Fields
 	private int number;
 	private Node1 next;
+
+	public Node1() {
+	}
 
 	public Node1(Node1 next, int number) {
 		super();

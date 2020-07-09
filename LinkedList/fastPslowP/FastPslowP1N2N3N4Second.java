@@ -1,9 +1,9 @@
 package fastPslowP;
 
-import implAndAppend.LinkedList2;
-import implAndAppend.Node2;
+import impl.Impl1Second;
+import impl.Node2;
 
-public class FastPslowPFirst {
+public class FastPslowP1N2N3N4Second {
 	static Node2 hasCycle(Node2 head) { // returning node for next functions
 		if (head == null || head.next == null) {
 			return null;
@@ -31,7 +31,7 @@ public class FastPslowPFirst {
 			return null;
 		}
 
-		Node2 node = FastPslowPFirst.hasCycle(head);
+		Node2 node = FastPslowP1N2N3N4Second.hasCycle(head);
 		if (node != null)
 			return null;
 		Node2 fastP = head;
@@ -53,7 +53,7 @@ public class FastPslowPFirst {
 			return 0;
 		}
 
-		Node2 staticNode = FastPslowPFirst.hasCycle(head);
+		Node2 staticNode = FastPslowP1N2N3N4Second.hasCycle(head);
 		if (staticNode == null)
 			return 0;
 
@@ -88,7 +88,7 @@ public class FastPslowPFirst {
 			return null;
 		}
 
-		int cycleLength = FastPslowPFirst.countNodesInCycle(head);
+		int cycleLength = FastPslowP1N2N3N4Second.countNodesInCycle(head);
 
 		Node2 frontP = head;
 		for (int i = 0; i < cycleLength; i++) {
@@ -112,7 +112,7 @@ public class FastPslowPFirst {
 		Node2 node6 = new Node2(1);
 		Node2 node7 = new Node2(0);
 
-		LinkedList2 linkedlist = new LinkedList2();
+		Impl1Second linkedlist = new Impl1Second();
 		linkedlist.append(node1);
 		linkedlist.append(node2);
 		linkedlist.append(node3);
@@ -120,26 +120,26 @@ public class FastPslowPFirst {
 		linkedlist.append(node5);
 		linkedlist.append(node6);
 		linkedlist.append(node7);
-		System.out.println("initialy: " + FastPslowPFirst.hasCycle(linkedlist.head));
-		System.out.println("number of nodes in cycle: " + FastPslowPFirst.countNodesInCycle(linkedlist.head));
-		System.out.println("median: " + FastPslowPFirst.median(linkedlist.head).data);
-		System.out.println("2nd to last: " + FastPslowPFirst.returnNthNode(linkedlist.head, 2).data);
+		System.out.println("initialy: " + FastPslowP1N2N3N4Second.hasCycle(linkedlist.head));
+		System.out.println("number of nodes in cycle: " + FastPslowP1N2N3N4Second.countNodesInCycle(linkedlist.head));
+		System.out.println("median: " + FastPslowP1N2N3N4Second.median(linkedlist.head).data);
+		System.out.println("2nd to last: " + FastPslowP1N2N3N4Second.returnNthNode(linkedlist.head, 2).data);
 		System.out.println();
 
 		node7.next = node4;
-		System.out.println("after cycling: " + FastPslowPFirst.hasCycle(linkedlist.head).data);
-		System.out.println("number of nodes in cycle: " + FastPslowPFirst.countNodesInCycle(linkedlist.head));
-		System.out.println("median: " + FastPslowPFirst.median(linkedlist.head));
-		System.out.println("beginning of Cycle: " + FastPslowPFirst.beginningOfCycle(linkedlist.head).data);
+		System.out.println("after cycling: " + FastPslowP1N2N3N4Second.hasCycle(linkedlist.head).data);
+		System.out.println("number of nodes in cycle: " + FastPslowP1N2N3N4Second.countNodesInCycle(linkedlist.head));
+		System.out.println("median: " + FastPslowP1N2N3N4Second.median(linkedlist.head));
+		System.out.println("beginning of Cycle: " + FastPslowP1N2N3N4Second.beginningOfCycle(linkedlist.head).data);
 		System.out.println();
 
 		node7.next = null;
-		System.out.println("after grounding: " + FastPslowPFirst.hasCycle(linkedlist.head));
-		System.out.println("number of nodes in cycle: " + FastPslowPFirst.countNodesInCycle(linkedlist.head));
-		System.out.println("median: " + FastPslowPFirst.median(linkedlist.head).data);
-		System.out.println("6th to last: " + FastPslowPFirst.returnNthNode(linkedlist.head, 6).data);
-		System.out.println("N too big: " + FastPslowPFirst.returnNthNode(linkedlist.head, 30));
-		System.out.println("null list: " + FastPslowPFirst.returnNthNode(null, 3));
+		System.out.println("after grounding: " + FastPslowP1N2N3N4Second.hasCycle(linkedlist.head));
+		System.out.println("number of nodes in cycle: " + FastPslowP1N2N3N4Second.countNodesInCycle(linkedlist.head));
+		System.out.println("median: " + FastPslowP1N2N3N4Second.median(linkedlist.head).data);
+		System.out.println("6th to last: " + FastPslowP1N2N3N4Second.returnNthNode(linkedlist.head, 6).data);
+		System.out.println("N too big: " + FastPslowP1N2N3N4Second.returnNthNode(linkedlist.head, 30));
+		System.out.println("null list: " + FastPslowP1N2N3N4Second.returnNthNode(null, 3));
 		System.out.println();
 
 	}
