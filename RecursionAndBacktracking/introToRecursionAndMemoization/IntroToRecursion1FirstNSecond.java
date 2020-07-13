@@ -3,7 +3,7 @@ package introToRecursionAndMemoization;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IntroToRecursionOneFirstNSecond {
+public class IntroToRecursion1FirstNSecond {
 	static Map<Integer, Integer> fiboMap = new HashMap<Integer, Integer>();
 	static int result;
 

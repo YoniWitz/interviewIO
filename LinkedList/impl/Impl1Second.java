@@ -1,13 +1,12 @@
-package implAndAppend;
+package impl;
 
-public class LinkedList2 {
+public class Impl1Second {
 	public Node2 head;
 	public Node2 tail;
 
-	public LinkedList2() {
-	}
+	public Impl1Second() {}
 
-	public LinkedList2(Node2 head, Node2 tail) {
+	public Impl1Second(Node2 head, Node2 tail) {
 		this();
 		this.head = head;
 		this.tail = tail;
@@ -50,14 +49,14 @@ public class LinkedList2 {
 		System.out.println();
 	}
 
-	static void orderLL(LinkedList2 unorderedList) {
+	static void orderLL(Impl1Second unorderedList) {
 		if (unorderedList.head == null || unorderedList.head == unorderedList.tail) {
 			return;
 		}
 
-		LinkedList2 lL0 = new LinkedList2();
-		LinkedList2 lL1 = new LinkedList2();
-		LinkedList2 lL2 = new LinkedList2();
+		Impl1Second lL0 = new Impl1Second();
+		Impl1Second lL1 = new Impl1Second();
+		Impl1Second lL2 = new Impl1Second();
 
 		Node2 node = unorderedList.head;
 		while (node != null) {
@@ -75,7 +74,7 @@ public class LinkedList2 {
 			node = node.next;
 		}
 
-		LinkedList2 orderedLL = new LinkedList2();
+		Impl1Second orderedLL = new Impl1Second();
 
 		if (lL0.head != null) {
 			orderedLL.head = lL0.head;
@@ -94,9 +93,9 @@ public class LinkedList2 {
 		unorderedList.tail.next = null;
 	}
 
-	static void separateLLs(LinkedList2 linkedlist) {
-		LinkedList2 even = new LinkedList2();
-		LinkedList2 odd = new LinkedList2();
+	static void separateLLs(Impl1Second linkedlist) {
+		Impl1Second even = new Impl1Second();
+		Impl1Second odd = new Impl1Second();
 
 		Node2 node = linkedlist.head;
 		int index = 0;
@@ -120,13 +119,13 @@ public class LinkedList2 {
 		odd.printLinkedList();
 	}
 
-	static void deleteN(LinkedList2 linkedList, Node2 N, Node2 prev) {
-		if (linkedList.head == null || N == null) {
+	public void deleteN(Node2 N, Node2 prev) {
+		if (head == null || N == null) {
 			return;
 		}
 
-		if (N == linkedList.head) {
-			linkedList.head = N.next;
+		if (N == head) {
+			head = N.next;
 		}
 
 		if (prev == null) {// in this case, we already got N == head covered, so if prev is null, must be
@@ -134,8 +133,8 @@ public class LinkedList2 {
 			return;
 		}
 
-		if (N == linkedList.tail) {
-			linkedList.tail = prev;
+		if (N == tail) {
+			tail = prev;
 		}
 		prev.next = N.next;
 	}
@@ -165,7 +164,7 @@ public class LinkedList2 {
 		node5.data = 2;
 		node6.data = 1;
 		node7.data = 0;
-		LinkedList2 linkedlist = new LinkedList2();
+		Impl1Second linkedlist = new Impl1Second();
 		linkedlist.append(node1);
 		linkedlist.append(node2);
 		linkedlist.append(node3);
@@ -177,27 +176,27 @@ public class LinkedList2 {
 		System.out.println("original linkedlist:");
 		linkedlist.printLinkedList();
 
-		LinkedList2.deleteN(linkedlist, node1, null);
+		linkedlist.deleteN(node1, null);
 		System.out.println("after deleting head:");
 		linkedlist.printLinkedList();
 
-		LinkedList2.deleteN(linkedlist, node7, node6);
+		linkedlist.deleteN(node7, node6);
 		System.out.println("after deleting tail:");
 		linkedlist.printLinkedList();
 
-		LinkedList2.deleteN(linkedlist, node4, node3);
+		linkedlist.deleteN(node4, node3);
 		System.out.println("after deleting node4:");
 		linkedlist.printLinkedList();
 
-		LinkedList2.deleteNNoPrev(node5);
+		Impl1Second.deleteNNoPrev(node5);
 		System.out.println("after deleting node5:");
 		linkedlist.printLinkedList();
 
-		LinkedList2.orderLL(linkedlist);
+		Impl1Second.orderLL(linkedlist);
 		System.out.println("after ordering:");
 		linkedlist.printLinkedList();
 
-		LinkedList2.separateLLs(linkedlist);
+		Impl1Second.separateLLs(linkedlist);
 	}
 
 }

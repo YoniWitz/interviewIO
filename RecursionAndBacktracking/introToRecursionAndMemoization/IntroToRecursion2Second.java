@@ -1,6 +1,6 @@
 package introToRecursionAndMemoization;
 
-public class IntroToRecursionTwoSecond {
+public class IntroToRecursion2Second {
 	public static void main(String[] args) {
 		System.out.println(nPower(2, 2));
 		System.out.println(nPower(-2, 3));
