@@ -41,6 +41,8 @@ public class Impl1First {
 	}
 
 	public void printList() {
+		if(head == null) return;
+		
 		Node1 node = head;
 		while (node.getNext() != null) {
 			System.out.print(node.getNumber());

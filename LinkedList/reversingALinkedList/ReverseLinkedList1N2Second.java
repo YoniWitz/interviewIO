@@ -3,7 +3,7 @@ package reversingALinkedList;
 import impl.Impl1Second;
 import impl.Node2;
 
-public class ReverseLinkedListSecond {
+public class ReverseLinkedList1N2Second {
 	static void reverseLL(Impl1Second ll) {
 		if (ll.head == null || ll.head.next == null) {
 			return;

@@ -83,7 +83,7 @@ class LinkedList extends Impl1First {
 	}
 
 	public int findLengthOfCycle() {
-		if (!findIfCycle()) {
+		if (!findIfCycle() || getHead() == null) {
 			return -1;
 		}
 		Node1 fastNode = getHead().getNext();
@@ -104,7 +104,7 @@ class LinkedList extends Impl1First {
 	}
 	
 	public void findMedian() {
-		if(findIfCycle()) return;
+		if(findIfCycle() || getHead() == null) return;
 		
 		Node1 fastNode = getHead();
 		Node1 slowNode = getHead();
