@@ -3,7 +3,7 @@ package fastPslowP;
 import impl.Impl1First;
 import impl.Node1;
 
-public class FastPSlowP1N2N3N4First {
+public class FastPSlowP1N2N3N4N5First {
 
 	public static void main(String[] args) {
 		Node1 tail = new Node1(null, 6);
@@ -22,7 +22,9 @@ public class FastPSlowP1N2N3N4First {
 		tail.setNext(newNode2);
 		linkedList.findMedian();
 		linkedList.findIfCycle();
-		linkedList.findLengthOfCycle();
+		System.out.println("cycle length: " + linkedList.findLengthOfCycle());
+		System.out.println("cycle beginning " + linkedList.findCycleBeginnig());
+		
 	}
 }
 
@@ -31,6 +33,28 @@ class LinkedList extends Impl1First {
 		super(head, tail);
 	}
 
+	//find cycle length. bump one pointer by length and have another start from head.
+	//where they meet is where cycle starts
+	public int findCycleBeginnig() {
+		if(getHead() == null || !findIfCycle()) return -1;
+		
+		int length = findLengthOfCycle();
+		Node1 backPointer = getHead();
+		Node1 frontPointer = getHead();
+		
+		while(length > 0) {
+			frontPointer = frontPointer.getNext();
+			length--;
+		}
+		
+		while(frontPointer != backPointer) {
+			frontPointer = frontPointer.getNext();
+			backPointer = backPointer.getNext();
+		}
+		
+		return backPointer.getNumber();
+		
+	}
 	public boolean findIfCycle() {
 		Node1 fastNode = getHead();
 		Node1 slowNode = getHead();
@@ -58,9 +82,9 @@ class LinkedList extends Impl1First {
 		return false;
 	}
 
-	public void findLengthOfCycle() {
+	public int findLengthOfCycle() {
 		if (!findIfCycle()) {
-			return;
+			return -1;
 		}
 		Node1 fastNode = getHead().getNext();
 		Node1 slowNode = getHead();
@@ -69,13 +93,14 @@ class LinkedList extends Impl1First {
 			fastNode = fastNode.getNext().getNext();		
 			slowNode = slowNode.getNext();
 		}
-		int count = 1;
+		int length = 1;
 		slowNode = slowNode.getNext();
 		while (fastNode != slowNode) {	
 			slowNode = slowNode.getNext();
-			count++;
+			length++;
 		}
-		System.out.println(count);
+		System.out.println(length);
+		return length;
 	}
 	
 	public void findMedian() {

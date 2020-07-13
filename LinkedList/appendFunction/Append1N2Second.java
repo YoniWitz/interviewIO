@@ -1,4 +1,4 @@
-package appendAndSort;
+package appendFunction;
 
 import impl.Impl1Second;
 import impl.Node2;
