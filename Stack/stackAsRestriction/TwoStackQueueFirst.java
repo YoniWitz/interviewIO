@@ -2,11 +2,11 @@ package stackAsRestriction;
 
 import java.util.Stack;
 
-public class TwoStackQueue1<T> {
+public class TwoStackQueueFirst<T> {
 	public Stack<T> A;
 	public Stack<T> B;
 
-	public TwoStackQueue1() {
+	public TwoStackQueueFirst() {
 		A = new Stack<>();
 		B = new Stack<>();
 	}
@@ -40,7 +40,7 @@ public class TwoStackQueue1<T> {
 	}
 
 	public static void main(String[] args) throws Exception {
-		TwoStackQueue1<Integer> myQueue = new TwoStackQueue1<>();
+		TwoStackQueueFirst<Integer> myQueue = new TwoStackQueueFirst<>();
 
 		myQueue.add(1);
 		myQueue.add(2);

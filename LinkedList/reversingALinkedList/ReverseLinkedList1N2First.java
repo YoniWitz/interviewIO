@@ -2,7 +2,7 @@ package reversingALinkedList;
 
 public class ReverseLinkedList1N2First {
 	public static void main(String[] args) {
-		Node node1 = new Node(null, 1);
+		Node node1 = new Node(null, 10);
 
 		Node node3 = new Node(node1, 15);
 		Node node4 = new Node(node3, 23);
