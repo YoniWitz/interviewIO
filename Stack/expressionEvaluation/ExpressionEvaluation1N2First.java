@@ -6,7 +6,7 @@ public class ExpressionEvaluation1N2First {
 
 	public static void main(String[] str) {
 		evaluatePostFix(new String[] { "1", "7", "+", "2", "-" });
-		evaluateInfix(new String[] { "1", "+", "2", "/", "1", "-", "3", "*", "2" });
+		evaluateInfix(new String[] { "1", "/", "2", "/", "1", "-", "3", "*", "2" });
 	}
 
 	public static void evaluatePostFix(String[] postfixExpression) {
@@ -61,7 +61,7 @@ public class ExpressionEvaluation1N2First {
 			} else {
 				// * or /
 				if (prec2.contains(str)) {
-					while (prec2.contains(operatorStack.peek()) && !operatorStack.isEmpty()) {
+					while (!operatorStack.isEmpty() && prec2.contains( operatorStack.peek())) {
 						process(operatorStack, operandStack);
 					}
 					operatorStack.push(str);
