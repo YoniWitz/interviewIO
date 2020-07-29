@@ -20,10 +20,10 @@ public class CoinChangeFirst {
 		int[] ways = new int[target + 1];
 		ways[0] = 1;
 		
-		for(int i =0; i<=target; i++) {
-			for(int j =0; j< coinDenominations.length; j++) {
-				if(i + coinDenominations[j] <= target)
-				ways[i + coinDenominations[j]]++;
+		for(int j =0; j< coinDenominations.length; j++) {
+			for(int i =0; i + coinDenominations[j]<=target; i++) {			
+				
+				ways[i + coinDenominations[j]] += ways[i];
 			}
 		}
 		
