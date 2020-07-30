@@ -1,6 +1,6 @@
-package homework1224;
+package maxDiff;
 
-public class MaxDiff {
+public class MaxDiff1First {
 	static int maxDiff(int[] graph) {
 		if (graph == null || graph.length < 2) {
 			return 0;
