@@ -1,7 +1,7 @@
-package hw0104;
+package hashTableHashFunction;
 
-public class HashTableHashFunction {
-	static long hashCode(String key) {
+public class HashCodeImplementationFirst {
+	public static long hashCode(String key) {
 		if (key == null) {
 			return -1;
 		}
@@ -14,7 +14,7 @@ public class HashTableHashFunction {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(hashCode(null));
+		System.out.println(hashCode("cat"));
 
 	}
 
