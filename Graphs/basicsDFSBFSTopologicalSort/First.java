@@ -1,4 +1,4 @@
-package basicsDFSBFS;
+package basicsDFSBFSTopologicalSort;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
-public class ImplFirst {
+public class First {
 
 	public static void main(String[] args) {
 		Graph myGraph = new Graph();
@@ -58,18 +58,23 @@ public class ImplFirst {
 		// 100023456789
 		System.out.println("bfs traverse cloned graph from 2nd level: ");
 		myClonedGraph.bfsFromN(node2);
-		
+
 		Node sortNode1 = new Node(1);
 		Node sortNode2 = new Node(2);
 		Node sortNode3 = new Node(3);
 		Node sortNode4 = new Node(4);
 		Node sortNode5 = new Node(5);
-		
+
 		sortNode1.neighbors.add(sortNode2);
 		sortNode1.neighbors.add(sortNode4);
 		sortNode2.neighbors.add(sortNode4);
-		sortNode1.neighbors.add(sortNode5);
-		
+		sortNode2.neighbors.add(sortNode5);
+		sortNode2.neighbors.add(sortNode3);
+		sortNode3.neighbors.add(sortNode5);
+
+		Graph topologicalSort = new Graph();
+		topologicalSort.nodes.add(sortNode1);
+		System.out.println("minimum semesters: " + topologicalSort.minimumSemesters());
 	}
 }
 
@@ -87,11 +92,60 @@ class Graph {
 		return false;
 	}
 
-	public Stack<Integer> topologicalSort(){
-		Stack<Integer> topologicallySorted = new Stack<>();
-		
+	public int minimumSemesters() {
+		Stack<Node> topologicallySorted = topologicalSort();
+		int[] sortedCourses = new int[topologicallySorted.size()];
+		sortedCourses[0] = 1;
+
+		while (!topologicallySorted.isEmpty()) {
+			Node node = topologicallySorted.pop();
+
+			for (Node neighbor : node.neighbors) {
+				sortedCourses[neighbor.data - 1] = Math.max(sortedCourses[neighbor.data - 1], sortedCourses[node.data - 1] + 1);
+			}
+		}
+
+		return sortedCourses[sortedCourses.length - 1];
+	}
+
+	public Stack<Node> topologicalSort() {
+		Stack<Node> topologicallySorted = new Stack<>();
+
+		for (Node node : nodes) {
+			addNeighborsToStack(topologicallySorted, node);
+		}
+
+		cleanUpGraph();
 		return topologicallySorted;
 	}
+
+	public void addNeighborsToStack(Stack<Node> stack, Node node) {
+		if (node.status == Status.UNVISITED) {
+					
+			for (Node neighbor : node.neighbors) {
+				addNeighborsToStack(stack, neighbor);
+			}
+			node.status = Status.VISITED;
+			stack.add(node);
+		}
+	}
+
+//	public int graphDiameter() {
+//		int max = 0;
+//		
+//		for (Node node : nodes) {
+//			max = Math.max(max, nodeDiameter(node));
+//		}
+//
+//		cleanUpGraph();
+//		
+//		return max;
+//	}
+	
+//	public int nodeDiameter(Node node) {
+//		for()
+//	}
+	
 	public void dfs() {
 		for (Node node : nodes) {
 			node.dfVisit();
