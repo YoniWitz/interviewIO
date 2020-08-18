@@ -101,7 +101,8 @@ class Graph {
 			Node node = topologicallySorted.pop();
 
 			for (Node neighbor : node.neighbors) {
-				sortedCourses[neighbor.data - 1] = Math.max(sortedCourses[neighbor.data - 1], sortedCourses[node.data - 1] + 1);
+				sortedCourses[neighbor.data - 1] = Math.max(sortedCourses[neighbor.data - 1],
+						sortedCourses[node.data - 1] + 1);
 			}
 		}
 
@@ -121,7 +122,7 @@ class Graph {
 
 	public void addNeighborsToStack(Stack<Node> stack, Node node) {
 		if (node.status == Status.UNVISITED) {
-					
+
 			for (Node neighbor : node.neighbors) {
 				addNeighborsToStack(stack, neighbor);
 			}
@@ -141,11 +142,11 @@ class Graph {
 //		
 //		return max;
 //	}
-	
+
 //	public int nodeDiameter(Node node) {
 //		for()
 //	}
-	
+
 	public void dfs() {
 		for (Node node : nodes) {
 			node.dfVisit();

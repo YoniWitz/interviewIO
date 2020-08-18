@@ -1,9 +1,9 @@
-package hw0104;
+package introImpl;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
 
-public class Heaps1 {
+public class Heaps1First {
 	static int[] Smallests(int[] a, int n) {
 		if (a == null || n > a.length || n == 0) {
 			return null;
@@ -29,7 +29,7 @@ public class Heaps1 {
 	}
 
 	public static void main(String[] args) {
-		int a[] = Smallests(new int[] { 1, 3, 4, 7, 6, 92, 1, 2 }, 3);
+		int a[] = Smallests(new int[] { 1, 3, 4, 7, 6, 92, 1, 2 }, 4);
 		for (int el : a)
 			System.out.println(el);
 	}
