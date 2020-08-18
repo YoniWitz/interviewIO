@@ -1,4 +1,4 @@
-package hw1227;
+package hw0108;
 
 public class AddArrays {
 	static int[] addArrays(int[] a, int[] b) {

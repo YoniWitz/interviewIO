@@ -1,10 +1,10 @@
-package hw0104;
+package hw0108;
 
 import java.util.Arrays;
 import java.util.Random;
 
 public class SelectionAlgorithm {
-	static int kThSmallestHelper(int[] a, int k) {
+	public static int kThSmallestHelper(int[] a, int k) {
 		if (a == null || k > a.length) {
 			return -1;
 		}
@@ -20,7 +20,7 @@ public class SelectionAlgorithm {
 		}
 	}
 
-	static int partition(int[] a, int randomIndex) {
+	public static int partition(int[] a, int randomIndex) {
 		if (a == null || randomIndex >= a.length) {
 			return -1;
 		}
@@ -35,7 +35,7 @@ public class SelectionAlgorithm {
 		return less;
 	}
 
-	static void swap(int a[], int i, int j) {
+	public static void swap(int a[], int i, int j) {
 		if (a == null || i >= a.length || j >= a.length) {
 			return;
 		}

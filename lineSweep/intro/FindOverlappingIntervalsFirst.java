@@ -1,10 +1,10 @@
-package hw0104;
+package intro;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class LineSweepIntro1 {
+public class FindOverlappingIntervalsFirst {
 	static int overlap(Interval[] intervals) {
 		if (intervals == null) {
 			return -1;
