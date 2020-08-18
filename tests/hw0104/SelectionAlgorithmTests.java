@@ -5,6 +5,9 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import hw0108.SelectionAlgorithm;
+
+
 public class SelectionAlgorithmTests {
 	@Test
 	public void testSwap() {
