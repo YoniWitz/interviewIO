@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class LineSweepIntro3 {
-	static Interval[] mergeIntervals(Interval[] intervals) {
+public class MaxOverlappingIntevalsFirst {
+	static int maxOverlap(Interval[] intervals) {
 		if (intervals == null) {
-			return null;
+			return -1;
 		}
 		List<Point> points = new ArrayList<>();
 		for (Interval el : intervals) {
@@ -17,23 +17,17 @@ public class LineSweepIntro3 {
 		}
 		Collections.sort(points);
 		int count = 0;
-		boolean flag = true;
-		int i = 0;
-		int newStart = 0;
-		Interval[] mergedIntervals = new Interval[intervals.length];
+		int maxCount = 0;
 		for (Point el : points) {
-			count += el.isStart ? 1 : -1;
-			if (count == 1 && flag) {
-				flag = false;
-				newStart = el.time;
+			if (el.isStart) {
+				count++;
+			} else {
+				count--;
 			}
-			if (count == 0) {
-				flag = true;
-				mergedIntervals[i++] = new Interval(newStart, el.time);
-			}
-
+			if (count > 1)
+				maxCount = Math.max(maxCount, count);
 		}
-		return mergedIntervals;
+		return maxCount;
 
 	}
 
@@ -71,16 +65,11 @@ public class LineSweepIntro3 {
 	}
 
 	public static void main(String[] args) {
-		Interval[] intervals = new Interval[4];
+		Interval[] intervals = new Interval[3];
 		intervals[0] = new Interval(1, 3);
-		intervals[1] = new Interval(6, 8);
-		intervals[2] = new Interval(3, 5);
-		intervals[3] = new Interval(7, 9);
+		intervals[1] = new Interval(6, 9);
+		intervals[2] = new Interval(4, 5);
 
-		Interval[] mergedIntervals = (mergeIntervals(intervals));
-		for (Interval el : mergedIntervals) {
-			if (el != null)
-				System.out.println("(" + el.start + " " + el.end + ")");
-		}
+		System.out.println(maxOverlap(intervals));
 	}
 }

@@ -13,9 +13,10 @@ public class FindOverlappingIntervalsFirst {
 		for (Interval el : intervals) {
 			points.add(new Point(el.start, true));
 			points.add(new Point(el.end, false));
-
 		}
+		
 		Collections.sort(points);
+		
 		int count = 0;
 		for (Point el : points) {
 			if (el.isStart) {
@@ -28,7 +29,6 @@ public class FindOverlappingIntervalsFirst {
 			}
 		}
 		return 0;
-
 	}
 
 	static class Interval {
